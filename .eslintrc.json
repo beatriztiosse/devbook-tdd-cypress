@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "cypress"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "env": {
+    "cypress/globals": true
+  },
+  "parser": "babel-eslint"
+}
