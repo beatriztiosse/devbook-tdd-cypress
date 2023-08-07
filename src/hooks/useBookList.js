@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
-import { BookListContainer } from "./components/BookListContainer";
-import { Typography } from "@mui/material";
+import { api } from "../services/api";
 
-function App() {
-  const [books, setBooks] = useState([]);
+export const useBookList = (initial) => {
+  const [books, setBooks] = useState(initial);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -28,12 +27,5 @@ function App() {
     fetchBooks();
   }, []);
   
-  return (
-    <>
-      <Typography variant="h2" component="h2" data-test="heading">DevBook</Typography>
-      <BookListContainer />
-    </>
-  );
+  return { books, loading, error }
 }
-
-export default App;
